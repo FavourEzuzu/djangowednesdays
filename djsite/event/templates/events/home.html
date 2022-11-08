@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+{% extends 'events/base.html' %}
+{% block content %}
+<body>
+    <center>
+        <h1>Hello {{ name }} Events for {{ month }}
+        {{ year }} </h1>
+        {{ cal|safe }}
+        <br><br>
+        <h3>Events this month..</h3>
+        {% if event_list %}
+            {% for event in event_list %}
+                {{event}} - {{event.event_date}}
+            {% endfor %}
+        {% else %}
+        <p>sorry there are no events this month</p>
+        {% endif %}<br><br>
+        copyright (c){{ current_year }}
+    </center>
+</body>
+
+{% endblock %}
+</html>

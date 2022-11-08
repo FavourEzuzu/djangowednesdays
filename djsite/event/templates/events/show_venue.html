@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+{% extends 'events/base.html' %}
+{% block content %}
+<body>
+     <h1>{{  venue }} </h1>
+     <br>
+     <ul>
+         <li>{{ venue.name }}</li>
+         <li>{{ venue.address }}</li>
+         <li>{{ venue.zipcode }}</li>
+         <li>{{ venue.phone }}</li>
+         <li><a href="{{venue.web}}">{{ venue.web }}</a></li>
+         <li>{{ venue.email_address }}</li>
+         <li>Owner: {{ venue_owner }} </li>
+      </ul>
+    <br>
+    {% if venue.venue_image %}
+     <img src="{ venue.venue_image.url}">
+    {% endif %}
+
+</body>
+{% endblock %}
+</html>
